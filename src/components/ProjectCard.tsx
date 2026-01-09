@@ -3,51 +3,52 @@ import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
-  category: string;
-  year: string;
-  image: string;
+  description: string;
+  tags: string[];
   index: number;
 }
 
-const ProjectCard = ({ title, category, year, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, index }: ProjectCardProps) => {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group relative"
     >
-      {/* Image container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-card mb-6">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        
-        {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-background/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
-          <div className="w-14 h-14 rounded-full border border-foreground flex items-center justify-center">
-            <ArrowUpRight className="w-6 h-6 text-foreground" />
+      <div className="p-6 border border-border bg-card/50 h-full transition-all duration-300 hover:border-primary/50 hover:bg-card">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-4">
+          <span className="text-label text-muted-foreground">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10">
+            <ArrowUpRight className="w-4 h-4 text-muted-foreground transition-colors group-hover:text-primary" />
           </div>
         </div>
 
-        {/* Number index */}
-        <div className="absolute top-4 left-4 text-label text-muted-foreground">
-          {String(index + 1).padStart(2, "0")}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="font-display text-display-md text-foreground mb-2 transition-colors group-hover:text-primary">
+        {/* Content */}
+        <div className="space-y-4">
+          <h3 className="font-display text-display-sm text-foreground transition-colors group-hover:text-primary">
             {title}
           </h3>
-          <p className="text-label uppercase text-muted-foreground">{category}</p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed">
+            {description}
+          </p>
         </div>
-        <span className="text-label text-muted-foreground">{year}</span>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-border">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-label text-xs text-muted-foreground px-2 py-1 bg-muted/50 rounded"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.article>
   );
