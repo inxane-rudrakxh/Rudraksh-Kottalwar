@@ -25,13 +25,12 @@ const AboutSection = () => {
             
             <div className="space-y-6 text-body-lg text-muted-foreground mb-12">
               <p>
-                I'm Shashish—a full-stack developer passionate about building clean, 
-                functional applications. Every project starts with intent and 
-                ends with precision.
+                I'm Rudraksh, a full-stack developer focused on building clean, 
+                functional applications across web, desktop, and mobile platforms.
               </p>
               <p>
-                From concept to deployment, I focus on transforming complex ideas into 
-                elegant, user-focused solutions that solve real problems.
+                From concept to deployment, I enjoy turning complex ideas into 
+                reliable, user-focused solutions that solve real-world problems.
               </p>
             </div>
 
