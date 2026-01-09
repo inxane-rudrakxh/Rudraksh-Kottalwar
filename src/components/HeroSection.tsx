@@ -24,7 +24,7 @@ const HeroSection = () => {
           >
             <div className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-label uppercase text-foreground/60 tracking-widest">
-              Frontend Developer
+              Full-Stack Developer
             </span>
           </motion.div>
 
@@ -35,11 +35,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-display text-display-xl leading-[0.95] mb-8"
           >
-            Building
+            Building Apps for
             <br />
-            <span className="text-foreground/90">Modern Web</span>
+            <span className="text-primary">Web</span>
+            <span className="text-foreground/40">,</span>{" "}
+            <span className="text-primary">Desktop</span>
+            <span className="text-foreground/40"> &</span>
             <br />
-            <span className="text-primary">Experiences</span>
+            <span className="text-primary">Mobile</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -49,8 +52,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-body-lg text-foreground/60 max-w-xl mb-12"
           >
-            Hi, I'm Rudraksh — a frontend developer focused on clean interfaces, 
-            fast performance, and thoughtful user experiences.
+            Hi, I'm Rudraksh — a full-stack developer building websites, 
+            desktop applications, and Android apps with clean code and solid architecture.
           </motion.p>
 
           {/* Primary CTA */}
