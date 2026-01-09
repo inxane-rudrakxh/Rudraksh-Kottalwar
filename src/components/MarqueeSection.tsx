@@ -1,11 +1,11 @@
 const MarqueeSection = () => {
   const items = [
-    "BRAND IDENTITY",
-    "VISUAL SYSTEMS", 
-    "PRINT EDITIONS",
-    "INTERFACE DESIGN",
-    "ART DIRECTION",
-    "TYPOGRAPHY",
+    "JAVA",
+    "C++",
+    "JAVASCRIPT",
+    "NODE.JS",
+    "REACT",
+    "PYTHON",
   ];
 
   return (
