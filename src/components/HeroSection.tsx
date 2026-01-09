@@ -1,82 +1,73 @@
 import { motion } from "framer-motion";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center noise-overlay">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 grid-lines opacity-30" />
+    <section className="relative min-h-screen flex items-center">
+      {/* Subtle grid background - reduced opacity */}
+      <div className="absolute inset-0 grid-lines opacity-10" />
       
-      {/* Gradient accent */}
+      {/* Gradient accent - reduced intensity */}
       <div 
-        className="absolute top-0 right-0 w-1/2 h-1/2 pointer-events-none"
+        className="absolute top-0 right-0 w-1/2 h-1/2 pointer-events-none opacity-40"
         style={{ background: "var(--hero-gradient)" }}
       />
 
       <div className="section-container relative z-10 pt-32 pb-20">
-        <div className="max-w-5xl">
-          {/* Label */}
+        <div className="max-w-4xl">
+          {/* Role label */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-6"
           >
-            <div className="w-3 h-3 bg-primary" />
-            <span className="text-label uppercase text-muted-foreground tracking-widest">
-              Graphic Designer / Visual Architect
+            <div className="w-2 h-2 bg-primary rounded-full" />
+            <span className="text-label uppercase text-foreground/60 tracking-widest">
+              Frontend Developer
             </span>
           </motion.div>
 
-          {/* Main headline */}
+          {/* Main headline - typography focused */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-display-xl mb-8"
+            className="font-display text-display-xl leading-[0.95] mb-8"
           >
-            Design
+            Building
             <br />
-            <span className="text-gradient">With Intent</span>
-            <span className="text-primary">.</span>
+            <span className="text-foreground/90">Modern Web</span>
+            <br />
+            <span className="text-primary">Experiences</span>
           </motion.h1>
 
-          {/* Description */}
-          <motion.div
+          {/* Subheadline */}
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid md:grid-cols-2 gap-12 mt-16"
+            className="text-body-lg text-foreground/60 max-w-xl mb-12"
           >
-            <p className="text-body-lg text-muted-foreground max-w-md">
-              Crafting bold, modern visual solutions that cut through the noise. 
-              Every design is intentional—built for clarity, impact, and confident brand presence.
-            </p>
+            Hi, I'm Rudraksh — a frontend developer focused on clean interfaces, 
+            fast performance, and thoughtful user experiences.
+          </motion.p>
 
-            <div className="flex items-start gap-6">
-              <a
-                href="#work"
-                className="group flex items-center gap-4 text-foreground transition-colors hover:text-primary"
-              >
-                <span className="text-body-lg font-medium">View Selected Work</span>
-                <ArrowDownRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" />
-              </a>
-            </div>
+          {/* Primary CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-3 bg-primary px-8 py-4 text-label uppercase text-primary-foreground font-medium transition-all hover:bg-primary/90"
+            >
+              View Projects
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-12 left-6 md:left-8 flex flex-col items-center gap-3"
-        >
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-muted-foreground to-transparent" />
-          <span className="text-label uppercase text-muted-foreground" style={{ writingMode: "vertical-rl" }}>
-            Scroll
-          </span>
-        </motion.div>
       </div>
     </section>
   );
