@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +36,12 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/lets-talk"
               className="ml-4 border border-primary bg-transparent px-5 py-2.5 text-label uppercase text-primary transition-all hover:bg-primary hover:text-primary-foreground"
             >
               Let's Talk
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -78,16 +79,19 @@ const Navigation = () => {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contact"
+              <Link
+                to="/lets-talk"
                 onClick={() => setIsOpen(false)}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
                 className="mt-4 border border-primary bg-transparent px-8 py-4 text-label uppercase text-primary transition-all hover:bg-primary hover:text-primary-foreground"
               >
-                Let's Talk
-              </motion.a>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  Let's Talk
+                </motion.span>
+              </Link>
             </div>
           </motion.div>
         )}
