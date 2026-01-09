@@ -1,23 +1,13 @@
 import { motion } from "framer-motion";
+import profilePhoto from "@/assets/profile-photo.png";
 
-const skills = [
-  "Brand Identity",
-  "Visual Systems",
-  "Print Design",
-  "Editorial",
-  "UI/UX",
-  "Motion Graphics",
-  "Typography",
-  "Art Direction",
-];
-
-const tools = ["Figma", "Adobe Suite", "After Effects", "Blender", "Framer"];
+const tools = ["Cursor", "Figma", "Framer", "Android Studio", "Supabase"];
 
 const AboutSection = () => {
   return (
     <section id="about" className="section-spacing bg-card relative">
       <div className="section-container">
-        <div className="grid lg:grid-cols-12 gap-16">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           {/* Left column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -33,16 +23,28 @@ const AboutSection = () => {
               Over Chaos<span className="text-primary">.</span>
             </h2>
             
-            <div className="space-y-6 text-body-lg text-muted-foreground">
+            <div className="space-y-6 text-body-lg text-muted-foreground mb-12">
               <p>
-                I'm Shashish—a graphic designer specializing in bold, modern visual solutions 
-                that help brands confidently stand out. Every project starts with intent and 
+                I'm Shashish—a full-stack developer passionate about building clean, 
+                functional applications. Every project starts with intent and 
                 ends with precision.
               </p>
               <p>
-                From concept to execution, I focus on transforming complex ideas into clear, 
-                impactful visuals that resonate with audiences and elevate brand presence.
+                From concept to deployment, I focus on transforming complex ideas into 
+                elegant, user-focused solutions that solve real problems.
               </p>
+            </div>
+
+            {/* Tools */}
+            <div>
+              <span className="text-label uppercase text-muted-foreground mb-6 block">Tools</span>
+              <div className="grid grid-cols-2 gap-4">
+                {tools.map((tool) => (
+                  <span key={tool} className="text-body-md text-foreground/80">
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -52,41 +54,25 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-7 lg:pl-16"
+            className="lg:col-span-7 flex flex-col items-center lg:items-end"
           >
-            {/* Philosophy */}
-            <div className="mb-16 p-8 border border-border">
-              <span className="text-label uppercase text-muted-foreground mb-6 block">Philosophy</span>
-              <blockquote className="font-display text-display-md text-foreground">
-                "Design is intent made visible. Every choice should signal, not decorate."
-              </blockquote>
+            {/* Profile Image */}
+            <div className="mb-10 max-w-md">
+              <img
+                src={profilePhoto}
+                alt="Shashish"
+                className="w-full h-auto object-contain"
+              />
             </div>
 
-            {/* Skills */}
-            <div className="mb-12">
-              <span className="text-label uppercase text-muted-foreground mb-6 block">Capabilities</span>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-secondary text-secondary-foreground text-body-md"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Tools */}
-            <div>
-              <span className="text-label uppercase text-muted-foreground mb-6 block">Tools</span>
-              <div className="flex flex-wrap gap-6">
-                {tools.map((tool) => (
-                  <span key={tool} className="text-body-md text-foreground">
-                    {tool}
-                  </span>
-                ))}
-              </div>
+            {/* Philosophy text */}
+            <div className="max-w-md text-right">
+              <p className="font-display text-display-sm text-foreground mb-2">
+                "Code with purpose. Build with clarity."
+              </p>
+              <p className="text-body-md text-muted-foreground">
+                Every line of code should serve a reason—never just to exist.
+              </p>
             </div>
           </motion.div>
         </div>
