@@ -6,9 +6,9 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const navItems = [
-    { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#work" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Navigation = () => {
       >
         <div className="section-container flex items-center justify-between">
           <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-            SHASHISH<span className="text-primary">.</span>
+            RUDRAKSH<span className="text-primary">.</span>
           </a>
           
           {/* Desktop nav */}
@@ -30,7 +30,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-label uppercase text-muted-foreground transition-colors hover:text-foreground"
+                className="text-label uppercase text-foreground/70 transition-colors hover:text-foreground"
               >
                 {item.label}
               </a>
