@@ -5,11 +5,15 @@ const Footer = () => {
         <p className="text-label uppercase text-muted-foreground">
           © 2026 RUDRAKSH. ALL RIGHTS RESERVED
         </p>
-        
-        <a href="#" className="font-display text-lg font-bold text-foreground">
+
+        {/* Back to top (SAFE) */}
+        <a
+          href="#top"
+          className="font-display text-lg font-bold text-foreground"
+        >
           INXANE RUDRAKXH<span className="text-primary">.</span>
         </a>
-        
+
         <p className="text-label uppercase text-muted-foreground">
           CODE WITH INTENT
         </p>

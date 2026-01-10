@@ -11,14 +11,38 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
       <main>
+        {/* TOP ANCHOR (LOGO SCROLL) */}
+        <div id="top"></div>
+
+        {/* HERO */}
         <HeroSection />
+
+        {/* MARQUEE */}
         <MarqueeSection />
-        <WorkSection />
-        <SkillsSection />
-        <AboutSection />
-        <ContactSection />
+
+        {/* PROJECTS */}
+        <section id="work">
+          <WorkSection />
+        </section>
+
+        {/* SKILLS */}
+        <section id="skills">
+          <SkillsSection />
+        </section>
+
+        {/* ABOUT */}
+        <section id="about">
+          <AboutSection />
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact">
+          <ContactSection />
+        </section>
       </main>
+
       <Footer />
     </div>
   );
